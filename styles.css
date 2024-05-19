@@ -1,0 +1,313 @@
+@font-face {
+    font-family: cat1;
+    src: url(./assets/Simplecat-d9xpV.otf) format('opentype');
+}
+
+@font-face {
+    font-family: cat2;
+    src: url(./assets/KiddosyfreeRegular-GOEag.otf) format('opentype');
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+h1{
+    font-family: 'cat1';
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+}
+
+h2{
+    font-family: 'cat2';
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+}
+
+h3{
+    font-family: 'cat1';
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+}
+
+/* backrgound */
+.css-selector {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background: url('./assets/Desktop\ -\ 3.svg') no-repeat center center fixed;
+    background-size: cover; 
+    border: none; 
+    outline: none;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    text-align: center;
+}
+
+@keyframes GradientAnimation {
+    0% {background-position: 0% 50%}
+    50% {background-position: 100% 51%}
+    100% {background-position: 0% 50%}
+}
+
+.css-selector.disco-mode {
+    background: none;
+    animation: ColorChange 1s steps(1, end) infinite;
+}
+
+.video-container .image-animation.disco-mode {
+    animation: frameChangeDisco 1s infinite steps(1, end);
+}
+
+@keyframes ColorChange {
+    0%   {background-color: #41b5e0;} 
+    50%  {background-color: #d0cb5a;} 
+    25%  {background-color: #7553cc;} 
+    75%  {background-color: #e55a63;} 
+    100% {background-color: #41b5e0;} 
+}
+@keyframes frameChangeDisco {
+    0%  { background-image: url('./assets/image1.png'); }
+    25% { background-image: url('./assets/image2.png'); }
+    50% { background-image: url('./assets/image3.png'); }
+    75% { background-image: url('./assets/image4.png'); }
+    100% {background-image: url('./assets/image1.png');}
+}
+
+
+
+/* layout */
+.center-container {
+    margin-top: 20px; /* Space above the container */
+    width: 40%; /* Occupies 80% of its parent container's width */
+    display: flex; /* Using Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Align items to the center horizontally */
+    justify-content: center; /* Distribute space around items */
+    gap: 20px; /* Space between each child */
+}
+
+/* Style for the video container */
+.video-container {
+    width: 100%;
+    height: 40vh;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-container img{
+    height: 100%;
+    width: auto;
+}
+
+.image-animation {
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/image1.png'); /* Starting frame */
+    background-size: auto 100%; /* Fit height to 100% of the container, adjust width automatically */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-position: center; /* Center the image in the container */
+    animation: frameChange 4s infinite; /* Adjust duration as needed */
+}
+
+@keyframes frameChange {
+    0%, 25% { background-image: url('./assets/image1.png'); }
+    26%, 50% { background-image: url('./assets/image2.png'); }
+    51%, 75% { background-image: url('./assets/image3.png'); }
+    76%, 100% { background-image: url('./assets/image4.png'); }
+}
+
+/* Style for the switch container */
+.toggle {
+    align-self: center;
+}
+
+
+
+
+
+
+
+/* icon*/
+.icon-container {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Spacing between each button */
+    padding: 20px; /* Padding around the container */
+}
+
+.icon-button {
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Cursor as pointer to indicate it's clickable */
+    padding: 10px; /* Padding around the button for easier click */
+    display: flex; /* Use flex to center the SVG inside the button */
+    align-items: center; /* Center SVG vertically */
+    justify-content: center; /* Center SVG horizontally */
+}
+
+.icon-button img {
+    width: 40px; /* Set a fixed width for SVGs */
+    height: 40px; /* Maintain aspect ratio */
+}
+
+.icon-button:hover img, .icon-button:focus img {
+    transform: scale(1.2); /* Scale up by 20% */
+}
+
+
+
+/* gifs */
+
+/* Base styles for all gif containers */
+.gif-container {
+    position: absolute; /* Set position absolute for better control over placement */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent any overflow to maintain neatness */
+
+}
+
+.visible {
+    display: flex; /* Show container when class is added */
+}
+
+/* Specific styles for each container using relative units */
+.container-1 {
+    width: 17vw; /* 20% of viewport width */
+    height: 40vh; /* 15% of viewport height */
+    top: 5vh; /* Positioned 5% from the top of the viewport */
+    left: 3vw; /* Positioned 3% from the left of the viewport */
+    align-items: top;
+}
+
+.container-2 {
+    width: 18vw; /* 16% of viewport width */
+    height: 20vh; /* 12% of viewport height */
+    top: 0px; /* Stick to the top */
+    right: 0px; /* Stick to the right */
+}
+
+.container-3 {
+    width: 27vw; /* 22% of viewport width */
+    height: 35vh; /* 18% of viewport height */
+    bottom: 0vh; /* Positioned 8% from the bottom of the viewport */
+    left: 0vw; /* Positioned 5% from the left of the viewport */
+}
+
+.container-4 {
+    width: 35vw; /* 15% of viewport width */
+    height: 52vh; /* 20% of viewport height */
+    bottom: 15vh; /* Positioned 20% from the top of the viewport */
+    right: 1vw; /* Positioned 4% from the right of the viewport */
+}
+
+/* Common styles for images within the containers */
+.gif-container img {
+    width: 100%; /* Ensure the image fits the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/*switch */
+
+.switch-container {
+    display: inline-block;
+    position: relative;
+    user-select: none;
+}
+
+.toggle-checkbox {
+    /* Hidden but accessible */
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.toggle-label {
+    height: 20px;
+    width: auto;
+    display: inline-block;
+    padding: 10px 20px; /* Adjustable padding */
+    border: 2px solid transparent; /* Transparent border for animation */
+    background-color: #eee; /* Light grey background */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for animation */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.toggle-label:hover {
+    background-color: #ddd; /* Slightly darker on hover */
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #4CAF50; /* Change background when active */
+    color: white;
+    border-color: #4CAF50; /* Same color as the background for solid effect */
+}
+
+.copy-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Space between the text and the icon */
+}
+
+.fas {
+    cursor: pointer; /* Shows a pointer cursor on hover */
+    color: #fff; /* Green color for the icon */
+    font-size: 20px; /* Size of the icon */
+}
+
+.fas:hover {
+    color: #45a049; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {  /* Adjusts styles for screens narrower than 768px */
+    .video-container {
+        width: 120%;
+        position: relative; /* Make sure this is set to position children absolutely relative to this container */
+        overflow: hidden; /* Ensures nothing spills outside the bounds of the container */
+        display: flex; /* Use flexbox to center content */
+        align-items: center; /* This will vertically center the child */
+        justify-content: center; /* This will horizontally center the child */
+    }
+
+    .image-animation {
+        width: 100%; /* Adjust width as necessary */
+        height: 100%; /* Adjust height to ensure it covers enough area */
+        background-size: 120% auto; /* This will increase the size of the background */
+        background-repeat: no-repeat; /* Prevents the background from repeating */
+        background-position: center; /* Horizontally and vertically centers the background image */
+    }
+    .css-selector{
+        padding-top: 4%;
+    }
+}
+
+@media (max-width: 768px) {  /* Common breakpoint for tablets and below */
+    h1 {
+        font-size: 48px; /* Smaller than the original 60px */
+    }
+    h2 {
+        font-size: 32px; /* Smaller than the original 40px */
+    }
+    h3 {
+        font-size: 15px; /* Smaller than the original 30px */
+    }
+}
