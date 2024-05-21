@@ -15,6 +15,8 @@ html, body {
     height: 100%;
     min-height: 100vh;
     overflow: hidden; /* Prevent scrolling */
+    background: linear-gradient( #7553cc, #d0cb5a);
+    
 }
 
 h1{
@@ -298,6 +300,15 @@ h3{
     .css-selector{
         padding-top: 4%;
     }
+    html, body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        min-height: 100vh;
+        overflow: auto; /* Prevent scrolling */
+    }
+    
 }
 
 @media (max-width: 768px) {  /* Common breakpoint for tablets and below */
