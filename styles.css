@@ -299,6 +299,7 @@ h3{
     }
     .css-selector{
         padding-top: 4%;
+        overflow-y: visible;
     }
     html, body {
         box-sizing: border-box;
@@ -306,7 +307,7 @@ h3{
         padding: 0;
         height: 100%;
         min-height: 100vh;
-        overflow: auto; /* Prevent scrolling */
+        overflow-y: visible; /* Prevent scrolling */
     }
     
 }
